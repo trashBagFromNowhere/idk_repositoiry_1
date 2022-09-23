@@ -23,13 +23,13 @@ def ask():
         cords = input("         Ваш ход: ").split()
         
         if len(cords) != 2:
-            print(" Введите 2 координаты! ")
+            print(" Введите 2 координаты ")
             continue
         
         x, y = cords
         
         if not(x.isdigit()) or not(y.isdigit()):
-            print(" Введите числа! ")
+            print(" Введите числа ")
             continue
         
         x, y = int(x), int(y)
@@ -39,7 +39,7 @@ def ask():
             continue
         
         if field[x][y] != " ":
-            print(" Клетка занята! ")
+            print(" Клетка занята ")
             continue
         
         return x, y
@@ -53,10 +53,10 @@ def check_win():
         for c in cord:
             symbols.append(field[c[0]][c[1]])
         if symbols == ["X", "X", "X"]:
-            print("Выиграл X!!!")
+            print("Выиграл X")
             return True
         if symbols == ["0", "0", "0"]:
-            print("Выиграл 0!!!")
+            print("Выиграл 0")
             return True
     return False
 
@@ -67,9 +67,9 @@ while True:
     count += 1
     show()
     if count % 2 == 1:
-        print(" Ходит крестик!")
+        print(" Ходит крестик ")
     else:
-        print(" Ходит нолик!")
+        print(" Ходит нолик ")
     
     x, y = ask()
     
@@ -82,5 +82,5 @@ while True:
         break
     
     if count == 9:
-        print(" Ничья!")
+        print(" Ничья ")
         break
